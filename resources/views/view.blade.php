@@ -133,7 +133,7 @@
 
                                         <td
                                             class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-6">
-                                            <x-button> <a href="/edit/ {{ $row->id }}"
+                                            <x-button> <a href="/edit/{{ $row->id }}"
                                                     class="text-sm text-blue-300 underline">Edit<span></span></a>
                                             </x-button>
                                         </td>

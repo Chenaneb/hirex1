@@ -53,6 +53,7 @@ Route::group(['middleware' => 'auth'], function() {
   Route::get('view', [ViewEmployees::class, 'view']);
 
   Route::get('/export', 'ViewEmployees@export')->name('export');
+Route::get('/edit/{id}', [ViewEmployees::class,'edit'])->name('edit.view');
 Route::post('/edit/{id}', [ViewEmployees::class,'edit'])->name('edit.view');
     //Route::get('delete_view/{id}', [ViewEmployees::class, 'delete.view']);
   //Route::view('view', 'ViewEmployees')->name('View');

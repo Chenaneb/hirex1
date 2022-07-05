@@ -29,12 +29,10 @@
         
                             
                             <!--form  start-->
-                            <form enctype="multipart/form-data" method="POST" action="emp.update">
+                            <form enctype="multipart/form-data" method="POST" action="{{ route('emp.update')}}">
                         
                                 @csrf
-                        
-                                
-                                
+                
                                 <x-validation-errors />
                                 <x-success-message />
                                 <div class="shadow sm:rounded-md sm:overflow-hidden">
@@ -51,7 +49,8 @@
                                         <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                                             <x-label for="middle_name" :value="__('Middle Name')" />
                                             <x-input id="middle_name" value="{{ $ViewEmployees->middle_name }}" class="block mt-1 w-full" type="text"
-                                                name="middle_name" required autofocus />
+                                            name="middle_name" required autofocus />
+                                            <x-input value="{{ $id }}" name="id" class="block mt-1 w-full" type="hidden"/>
                                         </div>
                                         <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                                             <x-label for="last_name" :value="__('Last name')" />
@@ -60,8 +59,8 @@
                                         </div>
                                         <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                                             <x-label for="email" :value="__('Email')" />
-                                            <x-input id="email" value="{{ $ViewEmployees->Email }}" class="block mt-1 w-full" type="email" name="email"
-                                                :value="old('email')" required />
+                                            <x-input id="email" value="{{ $ViewEmployees->email }}" class="block mt-1 w-full" type="email" name="email"
+                                                required />
                                         </div>
                                         <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                                             <label for="phone_number" value="{{ $ViewEmployees->phone_number }}" class="block text-sm font-medium text-gray-700">Phone
@@ -198,7 +197,7 @@
                                                         <label for="file-upload"
                                                             class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
                                                         <span>Upload a file</span>
-                                                        <input id="file-upload" name="file-upload" type="file"
+                                                        <input id="profile_photo" name="profile_photo" type="file"
                                                             class="sr-only">
                                                         </label>
                                                         <p class="pl-1">or drag and drop</p>
